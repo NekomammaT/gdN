@@ -1,0 +1,2412 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    102172,       2402]
+NotebookOptionsPosition[     99919,       2355]
+NotebookOutlinePosition[    100312,       2371]
+CellTagsIndexPosition[    100269,       2368]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Gamma]inv", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Gamma]i11", ",", "\[Gamma]i12", ",", "\[Gamma]i13"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Gamma]i12", ",", "\[Gamma]i22", ",", "\[Gamma]i23"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Gamma]i13", ",", "\[Gamma]i23", ",", "\[Gamma]i33"}], 
+      "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]i", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Beta]1", ",", "\[Beta]2", ",", "\[Beta]3"}], "}"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.932168194375581*^9, 3.932168224035255*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"8a2e571d-cdd3-4d02-bc03-f1b74540a5e5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ginv", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"m", "==", "4"}], "&&", 
+       RowBox[{"n", "==", "4"}]}], ",", 
+      FractionBox[
+       RowBox[{"-", "1"}], 
+       SuperscriptBox["\[ScriptCapitalN]", "2"]], ",", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"m", "==", "4"}], ",", 
+        FractionBox[
+         RowBox[{"\[Beta]i", "[", 
+          RowBox[{"[", "n", "]"}], "]"}], 
+         SuperscriptBox["\[ScriptCapitalN]", "2"]], ",", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"n", "==", "4"}], ",", 
+          FractionBox[
+           RowBox[{"\[Beta]i", "[", 
+            RowBox[{"[", "m", "]"}], "]"}], 
+           SuperscriptBox["\[ScriptCapitalN]", "2"]], ",", 
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Beta]i", "[", 
+               RowBox[{"[", "m", "]"}], "]"}], 
+              RowBox[{"\[Beta]i", "[", 
+               RowBox[{"[", "n", "]"}], "]"}]}], 
+             SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "+", 
+           RowBox[{"\[Gamma]inv", "[", 
+            RowBox[{"[", 
+             RowBox[{"m", ",", "n"}], "]"}], "]"}]}]}], "]"}]}], "]"}]}], 
+     "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m", ",", "4"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "4"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9321681678151073`*^9, 3.932168188897152*^9}, {
+  3.932168229036736*^9, 3.932168290521703*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"34f053ce-bf68-42b6-bb17-0788b77b2f47"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        SuperscriptBox["\[Beta]1", "2"], 
+        SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "+", "\[Gamma]i11"}], 
+     ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"\[Beta]1", " ", "\[Beta]2"}], 
+        SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "+", "\[Gamma]i12"}], 
+     ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"\[Beta]1", " ", "\[Beta]3"}], 
+        SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "+", "\[Gamma]i13"}], 
+     ",", 
+     FractionBox["\[Beta]1", 
+      SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"\[Beta]1", " ", "\[Beta]2"}], 
+        SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "+", "\[Gamma]i12"}], 
+     ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        SuperscriptBox["\[Beta]2", "2"], 
+        SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "+", "\[Gamma]i22"}], 
+     ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"\[Beta]2", " ", "\[Beta]3"}], 
+        SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "+", "\[Gamma]i23"}], 
+     ",", 
+     FractionBox["\[Beta]2", 
+      SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"\[Beta]1", " ", "\[Beta]3"}], 
+        SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "+", "\[Gamma]i13"}], 
+     ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"\[Beta]2", " ", "\[Beta]3"}], 
+        SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "+", "\[Gamma]i23"}], 
+     ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        SuperscriptBox["\[Beta]3", "2"], 
+        SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "+", "\[Gamma]i33"}], 
+     ",", 
+     FractionBox["\[Beta]3", 
+      SuperscriptBox["\[ScriptCapitalN]", "2"]]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["\[Beta]1", 
+      SuperscriptBox["\[ScriptCapitalN]", "2"]], ",", 
+     FractionBox["\[Beta]2", 
+      SuperscriptBox["\[ScriptCapitalN]", "2"]], ",", 
+     FractionBox["\[Beta]3", 
+      SuperscriptBox["\[ScriptCapitalN]", "2"]], ",", 
+     RowBox[{"-", 
+      FractionBox["1", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"]]}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.932168281993294*^9, 3.9321682910794277`*^9}},
+ CellLabel->"Out[4]=",ExpressionUUID->"920fc8c5-cff4-459d-8d4e-9e1d8cae0508"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ginv", ".", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"m", "==", "4"}], "&&", 
+        RowBox[{"n", "==", "4"}]}], ",", 
+       RowBox[{
+        RowBox[{"-", 
+         SuperscriptBox["\[ScriptCapitalN]", "2"]}], "+", 
+        RowBox[{"\[Beta]i", ".", 
+         RowBox[{"Inverse", "[", "\[Gamma]inv", "]"}], ".", "\[Beta]i"}]}], 
+       ",", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"m", "==", "4"}], ",", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"Inverse", "[", "\[Gamma]inv", "]"}], ".", "\[Beta]i"}], 
+           ")"}], "[", 
+          RowBox[{"[", "n", "]"}], "]"}], ",", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"n", "==", "4"}], ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"Inverse", "[", "\[Gamma]inv", "]"}], ".", "\[Beta]i"}],
+              ")"}], "[", 
+            RowBox[{"[", "m", "]"}], "]"}], ",", 
+           RowBox[{
+            RowBox[{"Inverse", "[", "\[Gamma]inv", "]"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"m", ",", "n"}], "]"}], "]"}]}], "]"}]}], "]"}]}], "]"}],
+      ",", 
+     RowBox[{"{", 
+      RowBox[{"m", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "4"}], "}"}]}], "]"}]}], "//", "Simplify"}]], "Input",\
+
+ CellChangeTimes->{{3.93216913741617*^9, 3.932169216885047*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"8fdf47f5-4ec0-4888-a48a-35e37bd65bcd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.932169213384151*^9, 3.932169217171958*^9}},
+ CellLabel->"Out[35]=",ExpressionUUID->"c2a350b7-f05e-494b-907b-8d6620312489"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Pi]i", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Pi]1", ",", "\[Pi]2", ",", "\[Pi]3"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Aij", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"A11", ",", "A12", ",", "A13"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"A21", ",", "A22", ",", "A23"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"A31", ",", "A32", ",", "A33"}], "}"}]}], "}"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.9321683417182007`*^9, 3.932168392875011*^9}, {
+  3.9321685520159473`*^9, 3.932168559496538*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"c63f2396-6bd7-4464-b640-fd113329226b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Fmn", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"m", "==", "4"}], "&&", 
+       RowBox[{"n", "==", "4"}]}], ",", "0", ",", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"m", "==", "4"}], ",", 
+        RowBox[{
+         FractionBox["\[ScriptCapitalN]", 
+          RowBox[{
+           RowBox[{"Sqrt", "[", "\[Gamma]", "]"}], 
+           SuperscriptBox["f", "2"]}]], 
+         RowBox[{"\[Pi]i", "[", 
+          RowBox[{"[", "n", "]"}], "]"}]}], ",", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"n", "==", "4"}], ",", 
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox["\[ScriptCapitalN]", 
+             RowBox[{
+              RowBox[{"Sqrt", "[", "\[Gamma]", "]"}], 
+              SuperscriptBox["f", "2"]}]]}], 
+           RowBox[{"\[Pi]i", "[", 
+            RowBox[{"[", "m", "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"Aij", "[", 
+            RowBox[{"[", 
+             RowBox[{"n", ",", "m"}], "]"}], "]"}], "-", 
+           RowBox[{"Aij", "[", 
+            RowBox[{"[", 
+             RowBox[{"m", ",", "n"}], "]"}], "]"}]}]}], "]"}]}], "]"}]}], 
+     "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m", ",", "4"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "4"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9321682963586397`*^9, 3.932168327768505*^9}, {
+   3.932168395598689*^9, 3.932168436681981*^9}, {3.932168567498165*^9, 
+   3.932168590051049*^9}, 3.932168635200548*^9},
+ CellLabel->"In[38]:=",ExpressionUUID->"22ac0aa9-f2ea-4d72-8d40-73136ff665d7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{
+      RowBox[{"-", "A12"}], "+", "A21"}], ",", 
+     RowBox[{
+      RowBox[{"-", "A13"}], "+", "A31"}], ",", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"\[ScriptCapitalN]", " ", "\[Pi]1"}], 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", 
+        SqrtBox["\[Gamma]"]}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"A12", "-", "A21"}], ",", "0", ",", 
+     RowBox[{
+      RowBox[{"-", "A23"}], "+", "A32"}], ",", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"\[ScriptCapitalN]", " ", "\[Pi]2"}], 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", 
+        SqrtBox["\[Gamma]"]}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"A13", "-", "A31"}], ",", 
+     RowBox[{"A23", "-", "A32"}], ",", "0", ",", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"\[ScriptCapitalN]", " ", "\[Pi]3"}], 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", 
+        SqrtBox["\[Gamma]"]}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[ScriptCapitalN]", " ", "\[Pi]1"}], 
+      RowBox[{
+       SuperscriptBox["f", "2"], " ", 
+       SqrtBox["\[Gamma]"]}]], ",", 
+     FractionBox[
+      RowBox[{"\[ScriptCapitalN]", " ", "\[Pi]2"}], 
+      RowBox[{
+       SuperscriptBox["f", "2"], " ", 
+       SqrtBox["\[Gamma]"]}]], ",", 
+     FractionBox[
+      RowBox[{"\[ScriptCapitalN]", " ", "\[Pi]3"}], 
+      RowBox[{
+       SuperscriptBox["f", "2"], " ", 
+       SqrtBox["\[Gamma]"]}]], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.932168437124475*^9, 3.932168591015502*^9, 
+  3.932168636132799*^9, 3.932169266256523*^9},
+ CellLabel->"Out[38]=",ExpressionUUID->"fea82d6c-1977-4346-823c-41bb55f01a3c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FF", "=", 
+  RowBox[{
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ginv", "[", 
+       RowBox[{"[", 
+        RowBox[{"a", ",", "b"}], "]"}], "]"}], 
+      RowBox[{"ginv", "[", 
+       RowBox[{"[", 
+        RowBox[{"c", ",", "d"}], "]"}], "]"}], 
+      RowBox[{"Fmn", "[", 
+       RowBox[{"[", 
+        RowBox[{"a", ",", "c"}], "]"}], "]"}], 
+      RowBox[{"Fmn", "[", 
+       RowBox[{"[", 
+        RowBox[{"b", ",", "d"}], "]"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"b", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"c", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"d", ",", "4"}], "}"}]}], "]"}], "//", "Simplify"}]}]], "Input",\
+
+ CellChangeTimes->{{3.932168443703454*^9, 3.932168484328438*^9}, {
+  3.932168715232336*^9, 3.932168715561496*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"1d15413f-5d84-4e8b-a4dd-870ef6969cd8"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]"}]], 
+   RowBox[{"2", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["A13", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i11"}],
+       "-", 
+      RowBox[{"2", " ", "A13", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i11"}],
+       "+", 
+      RowBox[{
+       SuperscriptBox["A31", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i11"}],
+       "+", 
+      RowBox[{"2", " ", "A13", " ", "A23", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i12"}],
+       "-", 
+      RowBox[{"2", " ", "A23", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i12"}],
+       "-", 
+      RowBox[{"2", " ", "A13", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i12"}],
+       "+", 
+      RowBox[{"2", " ", "A31", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i12"}],
+       "-", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["A13", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i13"}], "+", 
+      RowBox[{"4", " ", "A13", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i13"}], "-", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["A31", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i13"}], "-", 
+      RowBox[{"2", " ", "A13", " ", "A23", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i13"}], "+", 
+      RowBox[{"2", " ", "A23", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i13"}], "+", 
+      RowBox[{"2", " ", "A13", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i13"}], "-", 
+      RowBox[{"2", " ", "A31", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i13"}], "+", 
+      RowBox[{
+       SuperscriptBox["A13", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i13", "2"]}], "-", 
+      RowBox[{"2", " ", "A13", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i13", "2"]}], "+", 
+      RowBox[{
+       SuperscriptBox["A31", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i13", "2"]}], "+", 
+      RowBox[{
+       SuperscriptBox["A23", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i22"}],
+       "-", 
+      RowBox[{"2", " ", "A23", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i22"}],
+       "+", 
+      RowBox[{
+       SuperscriptBox["A32", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i22"}],
+       "+", 
+      RowBox[{
+       SuperscriptBox["A12", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+         RowBox[{"2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}], 
+         "+", 
+         RowBox[{
+          SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            SuperscriptBox["\[Gamma]i12", "2"], "-", 
+            RowBox[{"\[Gamma]i11", " ", "\[Gamma]i22"}]}], ")"}]}]}], ")"}]}],
+       "+", 
+      RowBox[{
+       SuperscriptBox["A21", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+         RowBox[{"2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}], 
+         "+", 
+         RowBox[{
+          SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            SuperscriptBox["\[Gamma]i12", "2"], "-", 
+            RowBox[{"\[Gamma]i11", " ", "\[Gamma]i22"}]}], ")"}]}]}], ")"}]}],
+       "-", 
+      RowBox[{"2", " ", "A13", " ", "A23", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i23"}], "+", 
+      RowBox[{"2", " ", "A23", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i23"}], "+", 
+      RowBox[{"2", " ", "A13", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+      RowBox[{"2", " ", "A31", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["A23", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i23"}], "+", 
+      RowBox[{"4", " ", "A23", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["A32", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]", " ", "\[Gamma]i23"}], "+", 
+      RowBox[{"2", " ", "A13", " ", "A23", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i13", " ", "\[Gamma]i23"}], "-", 
+      RowBox[{"2", " ", "A23", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i13", " ", "\[Gamma]i23"}], "-", 
+      RowBox[{"2", " ", "A13", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i13", " ", "\[Gamma]i23"}], "+", 
+      RowBox[{"2", " ", "A31", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i13", " ", "\[Gamma]i23"}], "+", 
+      RowBox[{
+       SuperscriptBox["A23", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i23", "2"]}], "-", 
+      RowBox[{"2", " ", "A23", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i23", "2"]}], "+", 
+      RowBox[{
+       SuperscriptBox["A32", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i23", "2"]}], "+", 
+      RowBox[{
+       SuperscriptBox["A13", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}],
+       "-", 
+      RowBox[{"2", " ", "A13", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}],
+       "+", 
+      RowBox[{
+       SuperscriptBox["A31", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}],
+       "+", 
+      RowBox[{"2", " ", "A13", " ", "A23", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+       "\[Gamma]", " ", "\[Gamma]i33"}], "-", 
+      RowBox[{"2", " ", "A23", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+       "\[Gamma]", " ", "\[Gamma]i33"}], "-", 
+      RowBox[{"2", " ", "A13", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+       "\[Gamma]", " ", "\[Gamma]i33"}], "+", 
+      RowBox[{"2", " ", "A31", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+       "\[Gamma]", " ", "\[Gamma]i33"}], "+", 
+      RowBox[{
+       SuperscriptBox["A23", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}],
+       "-", 
+      RowBox[{"2", " ", "A23", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}],
+       "+", 
+      RowBox[{
+       SuperscriptBox["A32", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}],
+       "-", 
+      RowBox[{
+       SuperscriptBox["A13", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i11", " ", "\[Gamma]i33"}], "+", 
+      RowBox[{"2", " ", "A13", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i11", " ", "\[Gamma]i33"}], "-", 
+      RowBox[{
+       SuperscriptBox["A31", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i11", " ", "\[Gamma]i33"}], "-", 
+      RowBox[{"2", " ", "A13", " ", "A23", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i12", " ", "\[Gamma]i33"}], "+", 
+      RowBox[{"2", " ", "A23", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i12", " ", "\[Gamma]i33"}], "+", 
+      RowBox[{"2", " ", "A13", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i12", " ", "\[Gamma]i33"}], "-", 
+      RowBox[{"2", " ", "A31", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i12", " ", "\[Gamma]i33"}], "-", 
+      RowBox[{
+       SuperscriptBox["A23", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i22", " ", "\[Gamma]i33"}], "+", 
+      RowBox[{"2", " ", "A23", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i22", " ", "\[Gamma]i33"}], "-", 
+      RowBox[{
+       SuperscriptBox["A32", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+       "\[Gamma]i22", " ", "\[Gamma]i33"}], "-", 
+      RowBox[{"2", " ", "A13", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i11", " ", "\[Pi]1"}], "+", 
+      RowBox[{"2", " ", "A31", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i11", " ", "\[Pi]1"}], "-", 
+      RowBox[{"2", " ", "A23", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]1"}], "+", 
+      RowBox[{"2", " ", "A32", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]1"}], "+", 
+      RowBox[{"2", " ", "A13", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]1"}], "-", 
+      RowBox[{"2", " ", "A31", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]1"}], "+", 
+      RowBox[{"2", " ", "A23", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]1"}], "-", 
+      RowBox[{"2", " ", "A32", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]1"}], "+", 
+      RowBox[{
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i11", " ", 
+       SuperscriptBox["\[Pi]1", "2"]}], "-", 
+      RowBox[{"2", " ", "A13", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]2"}], "+", 
+      RowBox[{"2", " ", "A31", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]2"}], "-", 
+      RowBox[{"2", " ", "A23", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i22", " ", "\[Pi]2"}], "+", 
+      RowBox[{"2", " ", "A32", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i22", " ", "\[Pi]2"}], "+", 
+      RowBox[{"2", " ", "A13", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]2"}], "-", 
+      RowBox[{"2", " ", "A31", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]2"}], "+", 
+      RowBox[{"2", " ", "A23", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]2"}], "-", 
+      RowBox[{"2", " ", "A32", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]2"}], "+", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i12", " ", 
+       "\[Pi]1", " ", "\[Pi]2"}], "+", 
+      RowBox[{
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i22", " ", 
+       SuperscriptBox["\[Pi]2", "2"]}], "-", 
+      RowBox[{"2", " ", "A13", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]3"}], "+", 
+      RowBox[{"2", " ", "A31", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]3"}], "-", 
+      RowBox[{"2", " ", "A23", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]3"}], "+", 
+      RowBox[{"2", " ", "A32", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]3"}], "+", 
+      RowBox[{"2", " ", "A13", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i33", " ", "\[Pi]3"}], "-", 
+      RowBox[{"2", " ", "A31", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i33", " ", "\[Pi]3"}], "+", 
+      RowBox[{"2", " ", "A23", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i33", " ", "\[Pi]3"}], "-", 
+      RowBox[{"2", " ", "A32", " ", 
+       SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+       " ", 
+       SqrtBox["\[Gamma]"], " ", "\[Gamma]i33", " ", "\[Pi]3"}], "+", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i13", " ", 
+       "\[Pi]1", " ", "\[Pi]3"}], "+", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i23", " ", 
+       "\[Pi]2", " ", "\[Pi]3"}], "+", 
+      RowBox[{
+       SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i33", " ", 
+       SuperscriptBox["\[Pi]3", "2"]}], "-", 
+      RowBox[{"2", " ", "A12", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"A31", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+          "\[Gamma]", " ", "\[Gamma]i11"}], "-", 
+         RowBox[{"A31", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+          "\[Gamma]", " ", "\[Gamma]i12"}], "-", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+          "\[Gamma]", " ", "\[Gamma]i12"}], "+", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+          "\[Gamma]", " ", "\[Gamma]i12"}], "-", 
+         RowBox[{"A31", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+          "\[Gamma]", " ", "\[Gamma]i13"}], "+", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i13"}], "-", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i13"}], "+", 
+         RowBox[{"A31", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i12", " ", "\[Gamma]i13"}], "+", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+          "\[Gamma]", " ", "\[Gamma]i22"}], "-", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+          "\[Gamma]", " ", "\[Gamma]i22"}], "-", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i13", " ", "\[Gamma]i22"}], "+", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i13", " ", "\[Gamma]i22"}], "+", 
+         RowBox[{"A21", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+            RowBox[{
+            "2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}], "+", 
+            
+            RowBox[{
+             SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}], "+", 
+            RowBox[{
+             SuperscriptBox["\[ScriptCapitalN]", "2"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               SuperscriptBox["\[Gamma]i12", "2"], "-", 
+               RowBox[{"\[Gamma]i11", " ", "\[Gamma]i22"}]}], ")"}]}]}], 
+           ")"}]}], "+", 
+         RowBox[{"A31", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i23"}], "-", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+          "\[Gamma]", " ", "\[Gamma]i23"}], "+", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+          "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+         RowBox[{"A31", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i11", " ", "\[Gamma]i23"}], "+", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i12", " ", "\[Gamma]i23"}], "-", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i12", " ", "\[Gamma]i23"}], "+", 
+         RowBox[{"A13", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+            RowBox[{"\[Beta]2", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "\[Beta]3"}], " ", "\[Gamma]i11"}], "+", 
+               RowBox[{"\[Beta]1", " ", "\[Gamma]i13"}]}], ")"}]}], "-", 
+            RowBox[{
+             SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}], "+", 
+            RowBox[{
+             SuperscriptBox["\[ScriptCapitalN]", "2"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "\[Gamma]i12"}], " ", "\[Gamma]i13"}], "+", 
+               RowBox[{"\[Gamma]i11", " ", "\[Gamma]i23"}]}], ")"}]}]}], 
+           ")"}]}], "+", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i11", " ", "\[Pi]1"}], "-", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]1"}], "+", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]2"}], "-", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i22", " ", "\[Pi]2"}], "+", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]3"}], "-", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]3"}]}], ")"}]}],
+       "-", 
+      RowBox[{"2", " ", "A21", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+          "\[Gamma]", " ", "\[Gamma]i12"}], "-", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+          "\[Gamma]", " ", "\[Gamma]i12"}], "-", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i13"}], "+", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i13"}], "-", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+          "\[Gamma]", " ", "\[Gamma]i22"}], "+", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+          "\[Gamma]", " ", "\[Gamma]i22"}], "+", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i13", " ", "\[Gamma]i22"}], "-", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i13", " ", "\[Gamma]i22"}], "+", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+          "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+          "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i12", " ", "\[Gamma]i23"}], "+", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["f", "4"], " ", 
+          SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+          "\[Gamma]i12", " ", "\[Gamma]i23"}], "+", 
+         RowBox[{"A13", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"\[Beta]2", " ", "\[Beta]3", " ", "\[Gamma]i11"}], "-", 
+            RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "-", 
+            RowBox[{"\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "+", 
+            RowBox[{
+             SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i12", 
+             " ", "\[Gamma]i13"}], "+", 
+            RowBox[{
+             SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}], "-", 
+            RowBox[{
+             SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i11", 
+             " ", "\[Gamma]i23"}]}], ")"}]}], "+", 
+         RowBox[{"A31", " ", 
+          SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "\[Beta]2"}], " ", "\[Beta]3", " ", "\[Gamma]i11"}],
+             "+", 
+            RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+            RowBox[{"\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "-", 
+            RowBox[{
+             SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i12", 
+             " ", "\[Gamma]i13"}], "-", 
+            RowBox[{
+             SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}], "+", 
+            RowBox[{
+             SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i11", 
+             " ", "\[Gamma]i23"}]}], ")"}]}], "-", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i11", " ", "\[Pi]1"}], "+", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]1"}], "-", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]2"}], "+", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i22", " ", "\[Pi]2"}], "-", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]3"}], "+", 
+         RowBox[{
+          SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1",
+           " ", 
+          SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]3"}]}], 
+        ")"}]}]}], ")"}]}]}]}]], "Output",
+ CellChangeTimes->{
+  3.932168485110957*^9, 3.9321685923617067`*^9, {3.932168694955942*^9, 
+   3.932168718124269*^9}},
+ CellLabel->"Out[22]=",ExpressionUUID->"4e3949f9-d2ac-4445-9b81-289d382097fa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Ham", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     FractionBox["\[ScriptCapitalN]", 
+      RowBox[{
+       RowBox[{"Sqrt", "[", "\[Gamma]", "]"}], 
+       SuperscriptBox["f", "2"]}]], 
+     RowBox[{"\[Pi]i", ".", "\[Gamma]inv", ".", "\[Pi]i"}]}], "+", 
+    RowBox[{"\[ScriptCapitalN]", " ", 
+     RowBox[{"Sqrt", "[", "\[Gamma]", "]"}], 
+     FractionBox[
+      SuperscriptBox["f", "2"], "4"], "FF"}]}], "//", "Simplify"}]}]], "Input",\
+
+ CellChangeTimes->{{3.932168824402268*^9, 3.932168871631048*^9}, {
+  3.932169058169383*^9, 3.9321690598889*^9}, {3.932170073159472*^9, 
+  3.932170073399805*^9}},
+ CellLabel->"In[52]:=",ExpressionUUID->"4b92efca-b17c-402e-ba0a-5cbc91e56ab4"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{"2", " ", 
+    SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", 
+    SqrtBox["\[Gamma]"]}]], 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["A13", "2"]}], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i11"}], 
+    "+", 
+    RowBox[{"2", " ", "A13", " ", "A31", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i11"}], 
+    "-", 
+    RowBox[{
+     SuperscriptBox["A31", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i11"}], 
+    "-", 
+    RowBox[{"2", " ", "A13", " ", "A23", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i12"}], 
+    "+", 
+    RowBox[{"2", " ", "A23", " ", "A31", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i12"}], 
+    "+", 
+    RowBox[{"2", " ", "A13", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i12"}], 
+    "-", 
+    RowBox[{"2", " ", "A31", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i12"}], 
+    "+", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["A13", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i13"}], "-", 
+    RowBox[{"4", " ", "A13", " ", "A31", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i13"}], "+", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["A31", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i13"}], "+", 
+    RowBox[{"2", " ", "A13", " ", "A23", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i13"}], "-", 
+    RowBox[{"2", " ", "A23", " ", "A31", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i13"}], "-", 
+    RowBox[{"2", " ", "A13", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i13"}], "+", 
+    RowBox[{"2", " ", "A31", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i13"}], "-", 
+    RowBox[{
+     SuperscriptBox["A13", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     SuperscriptBox["\[Gamma]i13", "2"]}], "+", 
+    RowBox[{"2", " ", "A13", " ", "A31", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     SuperscriptBox["\[Gamma]i13", "2"]}], "-", 
+    RowBox[{
+     SuperscriptBox["A31", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     SuperscriptBox["\[Gamma]i13", "2"]}], "-", 
+    RowBox[{
+     SuperscriptBox["A23", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i22"}], 
+    "+", 
+    RowBox[{"2", " ", "A23", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i22"}], 
+    "-", 
+    RowBox[{
+     SuperscriptBox["A32", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]", " ", "\[Gamma]i22"}], 
+    "-", 
+    RowBox[{
+     SuperscriptBox["A12", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+       RowBox[{"2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}], 
+       "+", 
+       RowBox[{
+        SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}], "+", 
+       RowBox[{
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Gamma]i12", "2"], "-", 
+          RowBox[{"\[Gamma]i11", " ", "\[Gamma]i22"}]}], ")"}]}]}], ")"}]}], 
+    "-", 
+    RowBox[{
+     SuperscriptBox["A21", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+       RowBox[{"2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}], 
+       "+", 
+       RowBox[{
+        SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}], "+", 
+       RowBox[{
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Gamma]i12", "2"], "-", 
+          RowBox[{"\[Gamma]i11", " ", "\[Gamma]i22"}]}], ")"}]}]}], ")"}]}], 
+    "+", 
+    RowBox[{"2", " ", "A13", " ", "A23", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+    RowBox[{"2", " ", "A23", " ", "A31", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+    RowBox[{"2", " ", "A13", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i23"}], "+", 
+    RowBox[{"2", " ", "A31", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i23"}], "+", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["A23", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+    RowBox[{"4", " ", "A23", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i23"}], "+", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["A32", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+     "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+    RowBox[{"2", " ", "A13", " ", "A23", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i13", " ", "\[Gamma]i23"}], "+", 
+    RowBox[{"2", " ", "A23", " ", "A31", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i13", " ", "\[Gamma]i23"}], "+", 
+    RowBox[{"2", " ", "A13", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i13", " ", "\[Gamma]i23"}], "-", 
+    RowBox[{"2", " ", "A31", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i13", " ", "\[Gamma]i23"}], "-", 
+    RowBox[{
+     SuperscriptBox["A23", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     SuperscriptBox["\[Gamma]i23", "2"]}], "+", 
+    RowBox[{"2", " ", "A23", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     SuperscriptBox["\[Gamma]i23", "2"]}], "-", 
+    RowBox[{
+     SuperscriptBox["A32", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     SuperscriptBox["\[Gamma]i23", "2"]}], "-", 
+    RowBox[{
+     SuperscriptBox["A13", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}], 
+    "+", 
+    RowBox[{"2", " ", "A13", " ", "A31", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}], 
+    "-", 
+    RowBox[{
+     SuperscriptBox["A31", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}], 
+    "-", 
+    RowBox[{"2", " ", "A13", " ", "A23", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+     "\[Gamma]", " ", "\[Gamma]i33"}], "+", 
+    RowBox[{"2", " ", "A23", " ", "A31", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+     "\[Gamma]", " ", "\[Gamma]i33"}], "+", 
+    RowBox[{"2", " ", "A13", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+     "\[Gamma]", " ", "\[Gamma]i33"}], "-", 
+    RowBox[{"2", " ", "A31", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+     "\[Gamma]", " ", "\[Gamma]i33"}], "-", 
+    RowBox[{
+     SuperscriptBox["A23", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}], 
+    "+", 
+    RowBox[{"2", " ", "A23", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}], 
+    "-", 
+    RowBox[{
+     SuperscriptBox["A32", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", "\[Gamma]i33"}], 
+    "+", 
+    RowBox[{
+     SuperscriptBox["A13", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i11", " ", "\[Gamma]i33"}], "-", 
+    RowBox[{"2", " ", "A13", " ", "A31", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i11", " ", "\[Gamma]i33"}], "+", 
+    RowBox[{
+     SuperscriptBox["A31", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i11", " ", "\[Gamma]i33"}], "+", 
+    RowBox[{"2", " ", "A13", " ", "A23", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i12", " ", "\[Gamma]i33"}], "-", 
+    RowBox[{"2", " ", "A23", " ", "A31", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i12", " ", "\[Gamma]i33"}], "-", 
+    RowBox[{"2", " ", "A13", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i12", " ", "\[Gamma]i33"}], "+", 
+    RowBox[{"2", " ", "A31", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i12", " ", "\[Gamma]i33"}], "+", 
+    RowBox[{
+     SuperscriptBox["A23", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i22", " ", "\[Gamma]i33"}], "-", 
+    RowBox[{"2", " ", "A23", " ", "A32", " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i22", " ", "\[Gamma]i33"}], "+", 
+    RowBox[{
+     SuperscriptBox["A32", "2"], " ", 
+     SuperscriptBox["f", "4"], " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+     "\[Gamma]i22", " ", "\[Gamma]i33"}], "+", 
+    RowBox[{"2", " ", "A13", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i11", " ", "\[Pi]1"}], "-", 
+    RowBox[{"2", " ", "A31", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i11", " ", "\[Pi]1"}], "+", 
+    RowBox[{"2", " ", "A23", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]1"}], "-", 
+    RowBox[{"2", " ", "A32", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]1"}], "-", 
+    RowBox[{"2", " ", "A13", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]1"}], "+", 
+    RowBox[{"2", " ", "A31", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]1"}], "-", 
+    RowBox[{"2", " ", "A23", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]1"}], "+", 
+    RowBox[{"2", " ", "A32", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]1"}], "+", 
+    RowBox[{
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i11", " ", 
+     SuperscriptBox["\[Pi]1", "2"]}], "+", 
+    RowBox[{"2", " ", "A13", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]2"}], "-", 
+    RowBox[{"2", " ", "A31", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]2"}], "+", 
+    RowBox[{"2", " ", "A23", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i22", " ", "\[Pi]2"}], "-", 
+    RowBox[{"2", " ", "A32", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i22", " ", "\[Pi]2"}], "-", 
+    RowBox[{"2", " ", "A13", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]2"}], "+", 
+    RowBox[{"2", " ", "A31", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]2"}], "-", 
+    RowBox[{"2", " ", "A23", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]2"}], "+", 
+    RowBox[{"2", " ", "A32", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]2"}], "+", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i12", " ", 
+     "\[Pi]1", " ", "\[Pi]2"}], "+", 
+    RowBox[{
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i22", " ", 
+     SuperscriptBox["\[Pi]2", "2"]}], "+", 
+    RowBox[{"2", " ", "A13", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]3"}], "-", 
+    RowBox[{"2", " ", "A31", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]3"}], "+", 
+    RowBox[{"2", " ", "A23", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]3"}], "-", 
+    RowBox[{"2", " ", "A32", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]3", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]3"}], "-", 
+    RowBox[{"2", " ", "A13", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i33", " ", "\[Pi]3"}], "+", 
+    RowBox[{"2", " ", "A31", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i33", " ", "\[Pi]3"}], "-", 
+    RowBox[{"2", " ", "A23", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i33", " ", "\[Pi]3"}], "+", 
+    RowBox[{"2", " ", "A32", " ", 
+     SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", " ", 
+     SqrtBox["\[Gamma]"], " ", "\[Gamma]i33", " ", "\[Pi]3"}], "+", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i13", " ", 
+     "\[Pi]1", " ", "\[Pi]3"}], "+", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i23", " ", 
+     "\[Pi]2", " ", "\[Pi]3"}], "+", 
+    RowBox[{
+     SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i33", " ", 
+     SuperscriptBox["\[Pi]3", "2"]}], "+", 
+    RowBox[{"2", " ", "A12", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"A31", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]", " ", "\[Gamma]i11"}], "-", 
+       RowBox[{"A31", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]", " ", "\[Gamma]i12"}], "-", 
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]", " ", "\[Gamma]i12"}], "+", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]", " ", "\[Gamma]i12"}], "-", 
+       RowBox[{"A31", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+        "\[Gamma]", " ", "\[Gamma]i13"}], "+", 
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i13"}], "-", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i13"}], "+", 
+       RowBox[{"A31", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i12", " ", "\[Gamma]i13"}], "+", 
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]", " ", "\[Gamma]i22"}], "-", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]", " ", "\[Gamma]i22"}], "-", 
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i13", " ", "\[Gamma]i22"}], "+", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i13", " ", "\[Gamma]i22"}], "+", 
+       RowBox[{"A21", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+          RowBox[{"2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}],
+           "+", 
+          RowBox[{
+           SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ScriptCapitalN]", "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             SuperscriptBox["\[Gamma]i12", "2"], "-", 
+             RowBox[{"\[Gamma]i11", " ", "\[Gamma]i22"}]}], ")"}]}]}], 
+         ")"}]}], "+", 
+       RowBox[{"A31", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i23"}], "-", 
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+        "\[Gamma]", " ", "\[Gamma]i23"}], "+", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+        "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+       RowBox[{"A31", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i11", " ", "\[Gamma]i23"}], "+", 
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i12", " ", "\[Gamma]i23"}], "-", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i12", " ", "\[Gamma]i23"}], "+", 
+       RowBox[{"A13", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+          RowBox[{"\[Beta]2", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "\[Beta]3"}], " ", "\[Gamma]i11"}], "+", 
+             RowBox[{"\[Beta]1", " ", "\[Gamma]i13"}]}], ")"}]}], "-", 
+          RowBox[{
+           SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ScriptCapitalN]", "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "\[Gamma]i12"}], " ", "\[Gamma]i13"}], "+", 
+             RowBox[{"\[Gamma]i11", " ", "\[Gamma]i23"}]}], ")"}]}]}], 
+         ")"}]}], "+", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i11", " ", "\[Pi]1"}], "-", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]1"}], "+", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]2"}], "-", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i22", " ", "\[Pi]2"}], "+", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]3"}], "-", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]3"}]}], ")"}]}], 
+    "+", 
+    RowBox[{"2", " ", "A21", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]", " ", "\[Gamma]i12"}], "-", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]", " ", "\[Gamma]i12"}], "-", 
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i13"}], "+", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i13"}], "-", 
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]", " ", "\[Gamma]i22"}], "+", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]", " ", "\[Gamma]i22"}], "+", 
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i13", " ", "\[Gamma]i22"}], "-", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i13", " ", "\[Gamma]i22"}], "+", 
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+        "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+        "\[Gamma]", " ", "\[Gamma]i23"}], "-", 
+       RowBox[{"A23", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i12", " ", "\[Gamma]i23"}], "+", 
+       RowBox[{"A32", " ", 
+        SuperscriptBox["f", "4"], " ", 
+        SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]", " ", 
+        "\[Gamma]i12", " ", "\[Gamma]i23"}], "+", 
+       RowBox[{"A13", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[Beta]2", " ", "\[Beta]3", " ", "\[Gamma]i11"}], "-", 
+          RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "-", 
+          RowBox[{"\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i12", " ", 
+           "\[Gamma]i13"}], "+", 
+          RowBox[{
+           SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i11", " ", 
+           "\[Gamma]i23"}]}], ")"}]}], "+", 
+       RowBox[{"A31", " ", 
+        SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "\[Beta]2"}], " ", "\[Beta]3", " ", "\[Gamma]i11"}], 
+          "+", 
+          RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+          RowBox[{"\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i12", " ", 
+           "\[Gamma]i13"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ScriptCapitalN]", "2"], " ", "\[Gamma]i11", " ", 
+           "\[Gamma]i23"}]}], ")"}]}], "-", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i11", " ", "\[Pi]1"}], "+", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]1"}], "-", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i12", " ", "\[Pi]2"}], "+", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i22", " ", "\[Pi]2"}], "-", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]2", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i13", " ", "\[Pi]3"}], "+", 
+       RowBox[{
+        SuperscriptBox["f", "2"], " ", "\[ScriptCapitalN]", " ", "\[Beta]1", 
+        " ", 
+        SqrtBox["\[Gamma]"], " ", "\[Gamma]i23", " ", "\[Pi]3"}]}], ")"}]}]}],
+    ")"}]}]], "Output",
+ CellChangeTimes->{{3.932168841181202*^9, 3.932168872840838*^9}, 
+   3.932169062020331*^9, 3.932170074957111*^9},
+ CellLabel->"Out[52]=",ExpressionUUID->"2247e91f-202c-44c4-a496-172458b3a02d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Fmn", "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "2"}], "]"}], "]"}], "-", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Transpose", "[", "Aij", "]"}], "-", "Aij"}], ")"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "2"}], "]"}], "]"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.932171402381278*^9, 3.932171413616601*^9}},
+ CellLabel->"In[85]:=",ExpressionUUID->"b855c48d-67d0-4daf-b93f-bf6519cec235"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.932171413958192*^9},
+ CellLabel->"Out[85]=",ExpressionUUID->"0f9fc38d-d6c9-40a0-ae23-b4fac3ab71dd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Collect", "[", 
+  RowBox[{
+   RowBox[{"Ham", "-", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       FractionBox["\[ScriptCapitalN]", 
+        RowBox[{"2", 
+         RowBox[{"Sqrt", "[", "\[Gamma]", "]"}], 
+         SuperscriptBox["f", "2"]}]], 
+       RowBox[{"\[Pi]i", ".", "\[Gamma]inv", ".", "\[Pi]i"}]}], "+", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[ScriptCapitalN]", " ", 
+         RowBox[{"Sqrt", "[", "\[Gamma]", "]"}], 
+         SuperscriptBox["f", "2"]}], "4"], 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"\[Gamma]inv", "[", 
+           RowBox[{"[", 
+            RowBox[{"a", ",", "b"}], "]"}], "]"}], 
+          RowBox[{"\[Gamma]inv", "[", 
+           RowBox[{"[", 
+            RowBox[{"c", ",", "d"}], "]"}], "]"}], 
+          RowBox[{"Fmn", "[", 
+           RowBox[{"[", 
+            RowBox[{"a", ",", "c"}], "]"}], "]"}], 
+          RowBox[{"Fmn", "[", 
+           RowBox[{"[", 
+            RowBox[{"b", ",", "d"}], "]"}], "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"a", ",", "3"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"b", ",", "3"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"c", ",", "3"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"d", ",", "3"}], "}"}]}], "]"}]}], "-", 
+      RowBox[{"\[Pi]i", ".", "\[Gamma]inv", ".", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Transpose", "[", "Aij", "]"}], "-", "Aij"}], ")"}], ".", 
+       "\[Beta]i"}]}], ")"}]}], ",", "\[ScriptCapitalN]", ",", "Simplify"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.932170107839979*^9, 3.932170121151581*^9}, {
+  3.932170230032815*^9, 3.932170261594994*^9}, {3.932170560825047*^9, 
+  3.932170606993153*^9}, {3.932170679451955*^9, 3.932170679539959*^9}, {
+  3.9321707127000837`*^9, 3.9321707477516527`*^9}, {3.932171000396644*^9, 
+  3.932171009393697*^9}, {3.9321711037679853`*^9, 3.9321711054698753`*^9}},
+ CellLabel->"In[84]:=",ExpressionUUID->"471cfeca-b7d9-4b3b-8d14-5c614beb0a58"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"2", " ", "\[ScriptCapitalN]"}]], 
+   RowBox[{
+    SuperscriptBox["f", "2"], " ", 
+    SqrtBox["\[Gamma]"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["A13", "2"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i11"}], "-", 
+      RowBox[{"2", " ", "A13", " ", "A31", " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i11"}], "+", 
+      RowBox[{
+       SuperscriptBox["A31", "2"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i11"}], "+", 
+      RowBox[{"2", " ", "A13", " ", "A23", " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i12"}], "-", 
+      RowBox[{"2", " ", "A23", " ", "A31", " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i12"}], "-", 
+      RowBox[{"2", " ", "A13", " ", "A32", " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i12"}], "+", 
+      RowBox[{"2", " ", "A31", " ", "A32", " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i12"}], "-", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["A13", "2"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]i13"}], "+", 
+      RowBox[{
+      "4", " ", "A13", " ", "A31", " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]i13"}], "-", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["A31", "2"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]i13"}], "-", 
+      RowBox[{
+      "2", " ", "A13", " ", "A23", " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]i13"}], "+", 
+      RowBox[{
+      "2", " ", "A23", " ", "A31", " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]i13"}], "+", 
+      RowBox[{
+      "2", " ", "A13", " ", "A32", " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]i13"}], "-", 
+      RowBox[{
+      "2", " ", "A31", " ", "A32", " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]i13"}], "+", 
+      RowBox[{
+       SuperscriptBox["A23", "2"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i22"}], "-", 
+      RowBox[{"2", " ", "A23", " ", "A32", " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i22"}], "+", 
+      RowBox[{
+       SuperscriptBox["A32", "2"], " ", 
+       SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i22"}], "+", 
+      RowBox[{
+       SuperscriptBox["A12", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+         RowBox[{"2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}], 
+         "+", 
+         RowBox[{
+          SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}]}], ")"}]}], 
+      "+", 
+      RowBox[{
+       SuperscriptBox["A21", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+         RowBox[{"2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}], 
+         "+", 
+         RowBox[{
+          SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}]}], ")"}]}], 
+      "-", 
+      RowBox[{
+      "2", " ", "A13", " ", "A23", " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]i23"}], "+", 
+      RowBox[{
+      "2", " ", "A23", " ", "A31", " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]i23"}], "+", 
+      RowBox[{
+      "2", " ", "A13", " ", "A32", " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]i23"}], "-", 
+      RowBox[{
+      "2", " ", "A31", " ", "A32", " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+       "\[Gamma]i23"}], "-", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["A23", "2"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]i23"}], "+", 
+      RowBox[{
+      "4", " ", "A23", " ", "A32", " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]i23"}], "-", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["A32", "2"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+       "\[Gamma]i23"}], "-", 
+      RowBox[{"2", " ", "A12", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+         "A31", " ", "\[Beta]2", " ", "\[Beta]3", " ", "\[Gamma]i11"}], "-", 
+         RowBox[{
+         "A31", " ", "\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "-", 
+         RowBox[{
+         "A23", " ", "\[Beta]2", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+         RowBox[{
+         "A32", " ", "\[Beta]2", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "-", 
+         RowBox[{
+         "A31", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "+", 
+         RowBox[{"A23", " ", 
+          SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i13"}], "-", 
+         RowBox[{"A32", " ", 
+          SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i13"}], "+", 
+         RowBox[{
+         "A23", " ", "\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i22"}], "-", 
+         RowBox[{
+         "A32", " ", "\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i22"}], "+", 
+         RowBox[{"A21", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+            RowBox[{
+            "2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}], "+", 
+            
+            RowBox[{
+             SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}]}], ")"}]}],
+          "+", 
+         RowBox[{"A31", " ", 
+          SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}], "-", 
+         RowBox[{
+         "A23", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i23"}], "+", 
+         RowBox[{
+         "A32", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i23"}], "+", 
+         RowBox[{"A13", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "\[Beta]2"}], " ", "\[Beta]3", " ", "\[Gamma]i11"}],
+             "+", 
+            RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+            RowBox[{"\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "-", 
+            RowBox[{
+             SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}]}], 
+           ")"}]}]}], ")"}]}], "+", 
+      RowBox[{"2", " ", "A21", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"A13", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "\[Beta]2"}], " ", "\[Beta]3", " ", "\[Gamma]i11"}],
+             "+", 
+            RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+            RowBox[{"\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "-", 
+            RowBox[{
+             SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}]}], ")"}]}],
+          "+", 
+         RowBox[{"A31", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"\[Beta]2", " ", "\[Beta]3", " ", "\[Gamma]i11"}], "-", 
+            RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "-", 
+            RowBox[{"\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "+", 
+            RowBox[{
+             SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}]}], ")"}]}],
+          "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"A23", "-", "A32"}], ")"}], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i13"}], "+", 
+            RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i22"}], "-", 
+            RowBox[{"\[Beta]2", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+               RowBox[{"\[Beta]1", " ", "\[Gamma]i23"}]}], ")"}]}]}], 
+           ")"}]}]}], ")"}]}], "+", 
+      RowBox[{
+       SuperscriptBox["A13", "2"], " ", 
+       SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i33"}], "-", 
+      RowBox[{"2", " ", "A13", " ", "A31", " ", 
+       SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i33"}], "+", 
+      RowBox[{
+       SuperscriptBox["A31", "2"], " ", 
+       SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i33"}], "+", 
+      RowBox[{
+      "2", " ", "A13", " ", "A23", " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+       "\[Gamma]i33"}], "-", 
+      RowBox[{
+      "2", " ", "A23", " ", "A31", " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+       "\[Gamma]i33"}], "-", 
+      RowBox[{
+      "2", " ", "A13", " ", "A32", " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+       "\[Gamma]i33"}], "+", 
+      RowBox[{
+      "2", " ", "A31", " ", "A32", " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+       "\[Gamma]i33"}], "+", 
+      RowBox[{
+       SuperscriptBox["A23", "2"], " ", 
+       SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i33"}], "-", 
+      RowBox[{"2", " ", "A23", " ", "A32", " ", 
+       SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i33"}], "+", 
+      RowBox[{
+       SuperscriptBox["A32", "2"], " ", 
+       SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i33"}]}], 
+     ")"}]}]}]}]], "Output",
+ CellChangeTimes->{{3.93217011836314*^9, 3.93217012209453*^9}, 
+   3.932170265803995*^9, 3.932170608800619*^9, 3.9321706806494837`*^9, {
+   3.9321707135739613`*^9, 3.932170748071604*^9}, 3.93217100991756*^9, {
+   3.932171091018797*^9, 3.932171106641021*^9}},
+ CellLabel->"Out[84]=",ExpressionUUID->"5d992107-4a21-41c7-87d0-be425ad918aa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Collect", "[", 
+  RowBox[{"Ham", ",", "\[ScriptCapitalN]", ",", "Simplify"}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.9321696993189077`*^9, 3.932169751509634*^9}, {
+  3.932169782368278*^9, 3.9321697876324387`*^9}, {3.932169983828483*^9, 
+  3.932169990198888*^9}},
+ CellLabel->"In[53]:=",ExpressionUUID->"ea3c5834-54bb-4b9e-a5ba-c3994a046b9c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"2", " ", "\[ScriptCapitalN]"}]], 
+    RowBox[{
+     SuperscriptBox["f", "2"], " ", 
+     SqrtBox["\[Gamma]"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["A13", "2"], " ", 
+        SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i11"}], "-", 
+       RowBox[{"2", " ", "A13", " ", "A31", " ", 
+        SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i11"}], "+", 
+       RowBox[{
+        SuperscriptBox["A31", "2"], " ", 
+        SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i11"}], "+", 
+       RowBox[{"2", " ", "A13", " ", "A23", " ", 
+        SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i12"}], "-", 
+       RowBox[{"2", " ", "A23", " ", "A31", " ", 
+        SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i12"}], "-", 
+       RowBox[{"2", " ", "A13", " ", "A32", " ", 
+        SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i12"}], "+", 
+       RowBox[{"2", " ", "A31", " ", "A32", " ", 
+        SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i12"}], "-", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["A13", "2"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]i13"}], "+", 
+       RowBox[{
+       "4", " ", "A13", " ", "A31", " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]i13"}], "-", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["A31", "2"], " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]i13"}], "-", 
+       RowBox[{
+       "2", " ", "A13", " ", "A23", " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]i13"}], "+", 
+       RowBox[{
+       "2", " ", "A23", " ", "A31", " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]i13"}], "+", 
+       RowBox[{
+       "2", " ", "A13", " ", "A32", " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]i13"}], "-", 
+       RowBox[{
+       "2", " ", "A31", " ", "A32", " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]i13"}], "+", 
+       RowBox[{
+        SuperscriptBox["A23", "2"], " ", 
+        SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i22"}], "-", 
+       RowBox[{"2", " ", "A23", " ", "A32", " ", 
+        SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i22"}], "+", 
+       RowBox[{
+        SuperscriptBox["A32", "2"], " ", 
+        SuperscriptBox["\[Beta]3", "2"], " ", "\[Gamma]i22"}], "+", 
+       RowBox[{
+        SuperscriptBox["A12", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+          RowBox[{"2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}],
+           "+", 
+          RowBox[{
+           SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}]}], ")"}]}], 
+       "+", 
+       RowBox[{
+        SuperscriptBox["A21", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+          RowBox[{"2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}],
+           "+", 
+          RowBox[{
+           SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}]}], ")"}]}], 
+       "-", 
+       RowBox[{
+       "2", " ", "A13", " ", "A23", " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]i23"}], "+", 
+       RowBox[{
+       "2", " ", "A23", " ", "A31", " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]i23"}], "+", 
+       RowBox[{
+       "2", " ", "A13", " ", "A32", " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]i23"}], "-", 
+       RowBox[{
+       "2", " ", "A31", " ", "A32", " ", "\[Beta]1", " ", "\[Beta]3", " ", 
+        "\[Gamma]i23"}], "-", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["A23", "2"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]i23"}], "+", 
+       RowBox[{
+       "4", " ", "A23", " ", "A32", " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]i23"}], "-", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["A32", "2"], " ", "\[Beta]2", " ", "\[Beta]3", " ", 
+        "\[Gamma]i23"}], "-", 
+       RowBox[{"2", " ", "A12", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+          "A31", " ", "\[Beta]2", " ", "\[Beta]3", " ", "\[Gamma]i11"}], "-", 
+          
+          RowBox[{
+          "A31", " ", "\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "-", 
+          
+          RowBox[{
+          "A23", " ", "\[Beta]2", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+          
+          RowBox[{
+          "A32", " ", "\[Beta]2", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "-", 
+          
+          RowBox[{
+          "A31", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "+", 
+          
+          RowBox[{"A23", " ", 
+           SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i13"}], "-", 
+          RowBox[{"A32", " ", 
+           SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i13"}], "+", 
+          RowBox[{
+          "A23", " ", "\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i22"}], "-", 
+          
+          RowBox[{
+          "A32", " ", "\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i22"}], "+", 
+          
+          RowBox[{"A21", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i11"}], "-", 
+             RowBox[{
+             "2", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i12"}], "+", 
+             RowBox[{
+              SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i22"}]}], 
+            ")"}]}], "+", 
+          RowBox[{"A31", " ", 
+           SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}], "-", 
+          RowBox[{
+          "A23", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i23"}], "+", 
+          
+          RowBox[{
+          "A32", " ", "\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i23"}], "+", 
+          
+          RowBox[{"A13", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "\[Beta]2"}], " ", "\[Beta]3", " ", 
+              "\[Gamma]i11"}], "+", 
+             RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+             RowBox[{"\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "-", 
+             RowBox[{
+              SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}]}], 
+            ")"}]}]}], ")"}]}], "+", 
+       RowBox[{"2", " ", "A21", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"A13", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "\[Beta]2"}], " ", "\[Beta]3", " ", 
+              "\[Gamma]i11"}], "+", 
+             RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+             RowBox[{"\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "-", 
+             RowBox[{
+              SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}]}], 
+            ")"}]}], "+", 
+          RowBox[{"A31", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"\[Beta]2", " ", "\[Beta]3", " ", "\[Gamma]i11"}], "-", 
+             RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i12"}], "-", 
+             RowBox[{"\[Beta]1", " ", "\[Beta]2", " ", "\[Gamma]i13"}], "+", 
+             RowBox[{
+              SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i23"}]}], 
+            ")"}]}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"A23", "-", "A32"}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i13"}], "+", 
+             RowBox[{"\[Beta]1", " ", "\[Beta]3", " ", "\[Gamma]i22"}], "-", 
+             RowBox[{"\[Beta]2", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"\[Beta]3", " ", "\[Gamma]i12"}], "+", 
+                RowBox[{"\[Beta]1", " ", "\[Gamma]i23"}]}], ")"}]}]}], 
+            ")"}]}]}], ")"}]}], "+", 
+       RowBox[{
+        SuperscriptBox["A13", "2"], " ", 
+        SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i33"}], "-", 
+       RowBox[{"2", " ", "A13", " ", "A31", " ", 
+        SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i33"}], "+", 
+       RowBox[{
+        SuperscriptBox["A31", "2"], " ", 
+        SuperscriptBox["\[Beta]1", "2"], " ", "\[Gamma]i33"}], "+", 
+       RowBox[{
+       "2", " ", "A13", " ", "A23", " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+        "\[Gamma]i33"}], "-", 
+       RowBox[{
+       "2", " ", "A23", " ", "A31", " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+        "\[Gamma]i33"}], "-", 
+       RowBox[{
+       "2", " ", "A13", " ", "A32", " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+        "\[Gamma]i33"}], "+", 
+       RowBox[{
+       "2", " ", "A31", " ", "A32", " ", "\[Beta]1", " ", "\[Beta]2", " ", 
+        "\[Gamma]i33"}], "+", 
+       RowBox[{
+        SuperscriptBox["A23", "2"], " ", 
+        SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i33"}], "-", 
+       RowBox[{"2", " ", "A23", " ", "A32", " ", 
+        SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i33"}], "+", 
+       RowBox[{
+        SuperscriptBox["A32", "2"], " ", 
+        SuperscriptBox["\[Beta]2", "2"], " ", "\[Gamma]i33"}]}], ")"}]}]}]}], 
+  "+", 
+  RowBox[{"A13", " ", "\[Beta]3", " ", "\[Gamma]i11", " ", "\[Pi]1"}], "-", 
+  RowBox[{"A31", " ", "\[Beta]3", " ", "\[Gamma]i11", " ", "\[Pi]1"}], "+", 
+  RowBox[{"A23", " ", "\[Beta]3", " ", "\[Gamma]i12", " ", "\[Pi]1"}], "-", 
+  RowBox[{"A32", " ", "\[Beta]3", " ", "\[Gamma]i12", " ", "\[Pi]1"}], "-", 
+  RowBox[{"A13", " ", "\[Beta]1", " ", "\[Gamma]i13", " ", "\[Pi]1"}], "+", 
+  RowBox[{"A31", " ", "\[Beta]1", " ", "\[Gamma]i13", " ", "\[Pi]1"}], "-", 
+  RowBox[{"A23", " ", "\[Beta]2", " ", "\[Gamma]i13", " ", "\[Pi]1"}], "+", 
+  RowBox[{"A32", " ", "\[Beta]2", " ", "\[Gamma]i13", " ", "\[Pi]1"}], "+", 
+  RowBox[{"A13", " ", "\[Beta]3", " ", "\[Gamma]i12", " ", "\[Pi]2"}], "-", 
+  RowBox[{"A31", " ", "\[Beta]3", " ", "\[Gamma]i12", " ", "\[Pi]2"}], "+", 
+  RowBox[{"A23", " ", "\[Beta]3", " ", "\[Gamma]i22", " ", "\[Pi]2"}], "-", 
+  RowBox[{"A32", " ", "\[Beta]3", " ", "\[Gamma]i22", " ", "\[Pi]2"}], "-", 
+  RowBox[{"A13", " ", "\[Beta]1", " ", "\[Gamma]i23", " ", "\[Pi]2"}], "+", 
+  RowBox[{"A31", " ", "\[Beta]1", " ", "\[Gamma]i23", " ", "\[Pi]2"}], "-", 
+  RowBox[{"A23", " ", "\[Beta]2", " ", "\[Gamma]i23", " ", "\[Pi]2"}], "+", 
+  RowBox[{"A32", " ", "\[Beta]2", " ", "\[Gamma]i23", " ", "\[Pi]2"}], "+", 
+  RowBox[{"A13", " ", "\[Beta]3", " ", "\[Gamma]i13", " ", "\[Pi]3"}], "-", 
+  RowBox[{"A31", " ", "\[Beta]3", " ", "\[Gamma]i13", " ", "\[Pi]3"}], "+", 
+  RowBox[{"A23", " ", "\[Beta]3", " ", "\[Gamma]i23", " ", "\[Pi]3"}], "-", 
+  RowBox[{"A32", " ", "\[Beta]3", " ", "\[Gamma]i23", " ", "\[Pi]3"}], "-", 
+  RowBox[{"A13", " ", "\[Beta]1", " ", "\[Gamma]i33", " ", "\[Pi]3"}], "+", 
+  RowBox[{"A31", " ", "\[Beta]1", " ", "\[Gamma]i33", " ", "\[Pi]3"}], "-", 
+  RowBox[{"A23", " ", "\[Beta]2", " ", "\[Gamma]i33", " ", "\[Pi]3"}], "+", 
+  RowBox[{"A32", " ", "\[Beta]2", " ", "\[Gamma]i33", " ", "\[Pi]3"}], "+", 
+  RowBox[{"A12", " ", "\[Beta]2", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"\[Gamma]i11", " ", "\[Pi]1"}], "+", 
+     RowBox[{"\[Gamma]i12", " ", "\[Pi]2"}], "+", 
+     RowBox[{"\[Gamma]i13", " ", "\[Pi]3"}]}], ")"}]}], "-", 
+  RowBox[{"A21", " ", "\[Beta]2", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"\[Gamma]i11", " ", "\[Pi]1"}], "+", 
+     RowBox[{"\[Gamma]i12", " ", "\[Pi]2"}], "+", 
+     RowBox[{"\[Gamma]i13", " ", "\[Pi]3"}]}], ")"}]}], "-", 
+  RowBox[{"A12", " ", "\[Beta]1", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"\[Gamma]i12", " ", "\[Pi]1"}], "+", 
+     RowBox[{"\[Gamma]i22", " ", "\[Pi]2"}], "+", 
+     RowBox[{"\[Gamma]i23", " ", "\[Pi]3"}]}], ")"}]}], "+", 
+  RowBox[{"A21", " ", "\[Beta]1", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"\[Gamma]i12", " ", "\[Pi]1"}], "+", 
+     RowBox[{"\[Gamma]i22", " ", "\[Pi]2"}], "+", 
+     RowBox[{"\[Gamma]i23", " ", "\[Pi]3"}]}], ")"}]}], "+", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["f", "2"], " ", 
+     SqrtBox["\[Gamma]"]}]], 
+   RowBox[{"\[ScriptCapitalN]", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["A13", "2"]}], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i13", "2"]}], "+", 
+      RowBox[{"2", " ", "A13", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i13", "2"]}], "-", 
+      RowBox[{
+       SuperscriptBox["A31", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i13", "2"]}], "+", 
+      RowBox[{
+       SuperscriptBox["A12", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", 
+          SuperscriptBox["\[Gamma]i12", "2"]}], "+", 
+         RowBox[{"\[Gamma]i11", " ", "\[Gamma]i22"}]}], ")"}]}], "+", 
+      RowBox[{
+       SuperscriptBox["A21", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", 
+          SuperscriptBox["\[Gamma]i12", "2"]}], "+", 
+         RowBox[{"\[Gamma]i11", " ", "\[Gamma]i22"}]}], ")"}]}], "-", 
+      RowBox[{"2", " ", "A13", " ", "A23", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i13", " ", 
+       "\[Gamma]i23"}], "+", 
+      RowBox[{"2", " ", "A23", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i13", " ", 
+       "\[Gamma]i23"}], "+", 
+      RowBox[{"2", " ", "A13", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i13", " ", 
+       "\[Gamma]i23"}], "-", 
+      RowBox[{"2", " ", "A31", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i13", " ", 
+       "\[Gamma]i23"}], "-", 
+      RowBox[{
+       SuperscriptBox["A23", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i23", "2"]}], "+", 
+      RowBox[{"2", " ", "A23", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i23", "2"]}], "-", 
+      RowBox[{
+       SuperscriptBox["A32", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       SuperscriptBox["\[Gamma]i23", "2"]}], "+", 
+      RowBox[{"2", " ", "A12", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "A13"}], " ", "\[Gamma]i12", " ", "\[Gamma]i13"}], "+", 
+         RowBox[{"A31", " ", "\[Gamma]i12", " ", "\[Gamma]i13"}], "-", 
+         RowBox[{"A23", " ", "\[Gamma]i13", " ", "\[Gamma]i22"}], "+", 
+         RowBox[{"A32", " ", "\[Gamma]i13", " ", "\[Gamma]i22"}], "+", 
+         RowBox[{"A21", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            SuperscriptBox["\[Gamma]i12", "2"], "-", 
+            RowBox[{"\[Gamma]i11", " ", "\[Gamma]i22"}]}], ")"}]}], "+", 
+         RowBox[{"A13", " ", "\[Gamma]i11", " ", "\[Gamma]i23"}], "-", 
+         RowBox[{"A31", " ", "\[Gamma]i11", " ", "\[Gamma]i23"}], "+", 
+         RowBox[{"A23", " ", "\[Gamma]i12", " ", "\[Gamma]i23"}], "-", 
+         RowBox[{"A32", " ", "\[Gamma]i12", " ", "\[Gamma]i23"}]}], ")"}]}], 
+      "+", 
+      RowBox[{"2", " ", "A21", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"A13", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"\[Gamma]i12", " ", "\[Gamma]i13"}], "-", 
+            RowBox[{"\[Gamma]i11", " ", "\[Gamma]i23"}]}], ")"}]}], "+", 
+         RowBox[{"A31", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "\[Gamma]i12"}], " ", "\[Gamma]i13"}], "+", 
+            RowBox[{"\[Gamma]i11", " ", "\[Gamma]i23"}]}], ")"}]}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"A23", "-", "A32"}], ")"}], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"\[Gamma]i13", " ", "\[Gamma]i22"}], "-", 
+            RowBox[{"\[Gamma]i12", " ", "\[Gamma]i23"}]}], ")"}]}]}], ")"}]}],
+       "+", 
+      RowBox[{
+       SuperscriptBox["A13", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i11", " ", 
+       "\[Gamma]i33"}], "-", 
+      RowBox[{"2", " ", "A13", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i11", " ", 
+       "\[Gamma]i33"}], "+", 
+      RowBox[{
+       SuperscriptBox["A31", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i11", " ", 
+       "\[Gamma]i33"}], "+", 
+      RowBox[{"2", " ", "A13", " ", "A23", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i12", " ", 
+       "\[Gamma]i33"}], "-", 
+      RowBox[{"2", " ", "A23", " ", "A31", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i12", " ", 
+       "\[Gamma]i33"}], "-", 
+      RowBox[{"2", " ", "A13", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i12", " ", 
+       "\[Gamma]i33"}], "+", 
+      RowBox[{"2", " ", "A31", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i12", " ", 
+       "\[Gamma]i33"}], "+", 
+      RowBox[{
+       SuperscriptBox["A23", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i22", " ", 
+       "\[Gamma]i33"}], "-", 
+      RowBox[{"2", " ", "A23", " ", "A32", " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i22", " ", 
+       "\[Gamma]i33"}], "+", 
+      RowBox[{
+       SuperscriptBox["A32", "2"], " ", 
+       SuperscriptBox["f", "4"], " ", "\[Gamma]", " ", "\[Gamma]i22", " ", 
+       "\[Gamma]i33"}], "+", 
+      RowBox[{"\[Gamma]i11", " ", 
+       SuperscriptBox["\[Pi]1", "2"]}], "+", 
+      RowBox[{"2", " ", "\[Gamma]i12", " ", "\[Pi]1", " ", "\[Pi]2"}], "+", 
+      RowBox[{"\[Gamma]i22", " ", 
+       SuperscriptBox["\[Pi]2", "2"]}], "+", 
+      RowBox[{"2", " ", "\[Gamma]i13", " ", "\[Pi]1", " ", "\[Pi]3"}], "+", 
+      RowBox[{"2", " ", "\[Gamma]i23", " ", "\[Pi]2", " ", "\[Pi]3"}], "+", 
+      RowBox[{"\[Gamma]i33", " ", 
+       SuperscriptBox["\[Pi]3", "2"]}]}], ")"}]}]}]}]], "Output",
+ CellChangeTimes->{{3.9321697847317467`*^9, 3.932169788897595*^9}, {
+   3.932169979032633*^9, 3.932169990634183*^9}, 3.932170077992593*^9},
+ CellLabel->"Out[53]=",ExpressionUUID->"f09970a8-d529-4def-804b-9d5c8d77e924"]
+}, Open  ]]
+},
+WindowSize->{1512, 871},
+WindowMargins->{{-1, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3f596901-cdd2-4ff7-a467-e35f453650a3"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 738, 20, 64, "Input",ExpressionUUID->"8a2e571d-cdd3-4d02-bc03-f1b74540a5e5"],
+Cell[CellGroupData[{
+Cell[1321, 44, 1626, 45, 61, "Input",ExpressionUUID->"34f053ce-bf68-42b6-bb17-0788b77b2f47"],
+Cell[2950, 91, 2652, 82, 120, "Output",ExpressionUUID->"920fc8c5-cff4-459d-8d4e-9e1d8cae0508"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5639, 178, 1566, 45, 70, "Input",ExpressionUUID->"8fdf47f5-4ec0-4888-a48a-35e37bd65bcd"],
+Cell[7208, 225, 514, 12, 42, "Output",ExpressionUUID->"c2a350b7-f05e-494b-907b-8d6620312489"]
+}, Open  ]],
+Cell[7737, 240, 688, 19, 64, "Input",ExpressionUUID->"c63f2396-6bd7-4464-b640-fd113329226b"],
+Cell[CellGroupData[{
+Cell[8450, 263, 1633, 45, 62, "Input",ExpressionUUID->"22ac0aa9-f2ea-4d72-8d40-73136ff665d7"],
+Cell[10086, 310, 1795, 55, 66, "Output",ExpressionUUID->"fea82d6c-1977-4346-823c-41bb55f01a3c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11918, 370, 972, 29, 37, "Input",ExpressionUUID->"1d15413f-5d84-4e8b-a4dd-870ef6969cd8"],
+Cell[12893, 401, 28504, 613, 720, "Output",ExpressionUUID->"4e3949f9-d2ac-4445-9b81-289d382097fa"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41434, 1019, 704, 18, 67, "Input",ExpressionUUID->"4b92efca-b17c-402e-ba0a-5cbc91e56ab4"],
+Cell[42141, 1039, 27111, 586, 749, "Output",ExpressionUUID->"2247e91f-202c-44c4-a496-172458b3a02d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69289, 1630, 471, 13, 37, "Input",ExpressionUUID->"b855c48d-67d0-4daf-b93f-bf6519cec235"],
+Cell[69763, 1645, 149, 2, 42, "Output",ExpressionUUID->"0f9fc38d-d6c9-40a0-ae23-b4fac3ab71dd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69949, 1652, 2030, 51, 164, "Input",ExpressionUUID->"471cfeca-b7d9-4b3b-8d14-5c614beb0a58"],
+Cell[71982, 1705, 9123, 217, 288, "Output",ExpressionUUID->"5d992107-4a21-41c7-87d0-be425ad918aa"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[81142, 1927, 367, 7, 37, "Input",ExpressionUUID->"ea3c5834-54bb-4b9e-a5ba-c3994a046b9c"],
+Cell[81512, 1936, 18391, 416, 1366, "Output",ExpressionUUID->"f09970a8-d529-4def-804b-9d5c8d77e924"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
